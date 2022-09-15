@@ -1,0 +1,1332 @@
+[2022-02-19 22:33:23]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统\build\Target 1\智能书房系统.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  Key
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Key
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 10000B5H
+Program Size: data=37.0 xdata=0 const=0 code=187
+LX51 RUN COMPLETE.  0 WARNING(S),  2 ERROR(S)
+
+
+[2022-02-19 22:35:17]	compilation failed at : "c:\Users\17752352458\Desktop\草稿\智能书房系统\main.c", exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x0187a] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+C51 COMPILER V9.54 - SN: K1DZC-GZIKNC
+COPYRIGHT Copyright (C) 2012 - 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+*** ERROR C141 IN LINE 74 OF .\MAIN.C: syntax error near 'Keynumber'
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)
+
+[2022-02-19 22:35:48]	compilation failed at : "c:\Users\17752352458\Desktop\草稿\智能书房系统\main.c", exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x0187a] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+C51 COMPILER V9.54 - SN: K1DZC-GZIKNC
+COPYRIGHT Copyright (C) 2012 - 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+*** ERROR C141 IN LINE 77 OF .\MAIN.C: syntax error near 'while'
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)
+
+[2022-02-19 22:36:24]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统\build\Target 1\智能书房系统.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Nixie_Scan
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _Nixie_Scan
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 10000BBH
+Program Size: data=37.0 xdata=0 const=0 code=191
+LX51 RUN COMPLETE.  0 WARNING(S),  2 ERROR(S)
+
+
+[2022-02-19 22:41:37]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统\build\Target 1\智能书房系统.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Nixie_Scan
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _Nixie_Scan
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 10000BBH
+Program Size: data=37.0 xdata=0 const=0 code=191
+LX51 RUN COMPLETE.  0 WARNING(S),  2 ERROR(S)
+
+
+[2022-02-19 22:44:22]	compilation failed at : "c:\Users\17752352458\Desktop\草稿\智能书房系统\main.c", exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x0187a] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+C51 COMPILER V9.54 - SN: K1DZC-GZIKNC
+COPYRIGHT Copyright (C) 2012 - 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+*** WARNING C318 IN LINE 8 OF .\MAIN.C: can't open file 'Nixie. H'
+*** WARNING C206 IN LINE 72 OF .\MAIN.C: 'Nixie_Scan': missing function-prototype
+*** ERROR C267 IN LINE 72 OF .\MAIN.C: 'Nixie_Scan': requires ANSI-style prototype
+C51 COMPILATION COMPLETE.  2 WARNING(S),  1 ERROR(S)
+
+[2022-02-19 22:44:43]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统\build\Target 1\智能书房系统.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Nixie_Scan
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _Nixie_Scan
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 10000BBH
+Program Size: data=37.0 xdata=0 const=0 code=191
+LX51 RUN COMPLETE.  0 WARNING(S),  2 ERROR(S)
+
+
+[2022-02-19 22:46:04]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统\build\Target 1\智能书房系统.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Nixie_Scan
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _Nixie_Scan
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 10000BBH
+Program Size: data=37.0 xdata=0 const=0 code=191
+LX51 RUN COMPLETE.  0 WARNING(S),  2 ERROR(S)
+
+
+[2022-02-19 22:46:09]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统\build\Target 1\智能书房系统.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Nixie_Scan
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _Nixie_Scan
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 10000BBH
+Program Size: data=37.0 xdata=0 const=0 code=191
+LX51 RUN COMPLETE.  0 WARNING(S),  2 ERROR(S)
+
+
+[2022-02-19 22:46:19]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统\build\Target 1\智能书房系统.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Nixie_Scan
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _Nixie_Scan
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 10000BBH
+Program Size: data=37.0 xdata=0 const=0 code=191
+LX51 RUN COMPLETE.  0 WARNING(S),  2 ERROR(S)
+
+
+[2022-02-19 22:46:49]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统\build\Target 1\智能书房系统.lnp" 
+".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Nixie_Scan
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Delay
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _Nixie_Scan
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 10000BBH
+Program Size: data=37.0 xdata=0 const=0 code=191
+LX51 RUN COMPLETE.  0 WARNING(S),  3 ERROR(S)
+
+
+[2022-02-19 22:47:49]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统\build\Target 1\智能书房系统.lnp" 
+".\build\Target 1\Key.o",".\build\Target 1\Nixie.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Delay
+    MODULE:  .\build\Target 1\Key.o (KEY)
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Delay
+    MODULE:  .\build\Target 1\main.o (MAIN)
+Program Size: data=59.0 xdata=0 const=0 code=321
+LX51 RUN COMPLETE.  0 WARNING(S),  2 ERROR(S)
+
+
+[2022-02-19 22:48:05]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统\build\Target 1\智能书房系统.lnp" 
+".\build\Target 1\Key.o",".\build\Target 1\Nixie.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Delay
+    MODULE:  .\build\Target 1\Key.o (KEY)
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Delay
+    MODULE:  .\build\Target 1\main.o (MAIN)
+Program Size: data=59.0 xdata=0 const=0 code=321
+LX51 RUN COMPLETE.  0 WARNING(S),  2 ERROR(S)
+
+
+[2022-02-19 22:48:27]	[done]
+	build successfully !
+
+[2022-02-19 23:11:52]	[done]
+	build successfully !
+
+[2022-02-19 23:12:43]	[done]
+	build successfully !
+
+[2022-02-20 09:44:46]	[done]
+	build successfully !
+
+[2022-02-20 09:51:51]	[done]
+	build successfully !
+
+[2022-02-20 09:53:39]	[done]
+	build successfully !
+
+[2022-02-20 09:59:00]	compilation failed at : "c:\Users\17752352458\Desktop\草稿\智能书房系统\main.c", exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x0187a] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+C51 COMPILER V9.54 - SN: K1DZC-GZIKNC
+COPYRIGHT Copyright (C) 2012 - 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+*** WARNING C318 IN LINE 7 OF .\MAIN.C: can't open file 'Nixie.h'
+*** ERROR C141 IN LINE 78 OF .\MAIN.C: syntax error near 'void'
+C51 COMPILATION COMPLETE.  1 WARNING(S),  1 ERROR(S)
+
+[2022-02-20 09:59:19]	[done]
+	build successfully !
+
+[2022-02-20 11:19:21]	compilation failed at : "c:\Users\17752352458\Desktop\草稿\智能书房系统\Timer0.c", exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x0187a] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+C51 COMPILER V9.54 - SN: K1DZC-GZIKNC
+COPYRIGHT Copyright (C) 2012 - 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+*** ERROR C202 IN LINE 11 OF .\TIMER0.C: 'AUXR': undefined identifier
+*** ERROR C202 IN LINE 32 OF .\TIMER0.C: 'PWM_Count': undefined identifier
+C51 COMPILATION COMPLETE.  0 WARNING(S),  2 ERROR(S)
+
+[2022-02-20 11:21:13]	compilation failed at : "c:\Users\17752352458\Desktop\草稿\智能书房系统\Timer0.c", exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x0187a] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+C51 COMPILER V9.54 - SN: K1DZC-GZIKNC
+COPYRIGHT Copyright (C) 2012 - 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+*** ERROR C202 IN LINE 11 OF .\TIMER0.C: 'AUXR': undefined identifier
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)
+
+[2022-02-20 11:21:25]	compilation failed at : "c:\Users\17752352458\Desktop\草稿\智能书房系统\pwm.c", exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x0187a] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+C51 COMPILER V9.54 - SN: K1DZC-GZIKNC
+COPYRIGHT Copyright (C) 2012 - 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+*** ERROR C129 IN LINE 3 OF .\PWM.C: missing ';' before 'PWM_Count'
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)
+
+[2022-02-20 11:21:55]	[done]
+	build successfully !
+
+[2022-02-20 11:50:20]	compilation failed at : "c:\Users\17752352458\Desktop\草稿\智能书房系统\pwm.c", exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x0187a] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+C51 COMPILER V9.54 - SN: K1DZC-GZIKNC
+COPYRIGHT Copyright (C) 2012 - 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+*** ERROR C202 IN LINE 21 OF .\PWM.C: 'PWM_Count': undefined identifier
+*** ERROR C202 IN LINE 25 OF .\PWM.C: 'count': undefined identifier
+*** ERROR C202 IN LINE 26 OF .\PWM.C: 'PWM': undefined identifier
+*** ERROR C202 IN LINE 27 OF .\PWM.C: 'count': undefined identifier
+*** ERROR C202 IN LINE 28 OF .\PWM.C: 'PWM': undefined identifier
+C51 COMPILATION COMPLETE.  0 WARNING(S),  5 ERROR(S)
+
+[2022-02-20 11:51:12]	compilation failed at : "c:\Users\17752352458\Desktop\草稿\智能书房系统\pwm.c", exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x0187a] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+C51 COMPILER V9.54 - SN: K1DZC-GZIKNC
+COPYRIGHT Copyright (C) 2012 - 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+*** ERROR C202 IN LINE 21 OF .\PWM.C: 'PWM_Count': undefined identifier
+*** ERROR C202 IN LINE 26 OF .\PWM.C: 'PWM': undefined identifier
+*** ERROR C202 IN LINE 28 OF .\PWM.C: 'PWM': undefined identifier
+C51 COMPILATION COMPLETE.  0 WARNING(S),  3 ERROR(S)
+
+[2022-02-20 11:55:03]	compilation failed at : "c:\Users\17752352458\Desktop\草稿\智能书房系统\pwm.c", exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x0187a] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+C51 COMPILER V9.54 - SN: K1DZC-GZIKNC
+COPYRIGHT Copyright (C) 2012 - 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+*** ERROR C202 IN LINE 21 OF .\PWM.C: 'PWM_Count': undefined identifier
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)
+
+[2022-02-20 11:55:19]	[done]
+	build successfully !
+
+[2022-02-20 12:02:17]	compilation failed at : "c:\Users\17752352458\Desktop\草稿\智能书房系统\main.c", exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x0187a] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+C51 COMPILER V9.54 - SN: K1DZC-GZIKNC
+COPYRIGHT Copyright (C) 2012 - 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+*** ERROR C100 IN LINE 67 OF .\MAIN.C: unprintable character 0xEF skipped
+*** ERROR C100 IN LINE 67 OF .\MAIN.C: unprintable character 0xBC skipped
+*** ERROR C100 IN LINE 67 OF .\MAIN.C: unprintable character 0x9B skipped
+*** ERROR C141 IN LINE 68 OF .\MAIN.C: syntax error near 'if'
+C51 COMPILATION COMPLETE.  0 WARNING(S),  4 ERROR(S)
+
+[2022-02-20 12:05:58]	compilation failed at : "c:\Users\17752352458\Desktop\草稿\智能书房系统\main.c", exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x0187a] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+C51 COMPILER V9.54 - SN: K1DZC-GZIKNC
+COPYRIGHT Copyright (C) 2012 - 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+*** ERROR C231 IN LINE 33 OF .\MAIN.C: 'Key': redefinition
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)
+
+[2022-02-20 12:06:25]	[done]
+	build successfully !
+
+[2022-02-20 12:07:54]	[done]
+	build successfully !
+
+[2022-02-20 13:53:16]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统\build\Target 1\智能书房系统.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Key.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o",".\build\Target 1\pwm.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\pwm.o (PWM)
+   DEFINED:  .\build\Target 1\main.o (MAIN)
+Program Size: data=43.0 xdata=0 const=0 code=474
+LX51 RUN COMPLETE.  0 WARNING(S),  1 ERROR(S)
+
+
+[2022-02-20 13:53:51]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统\build\Target 1\智能书房系统.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Key.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o",".\build\Target 1\pwm.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\pwm.o (PWM)
+   DEFINED:  .\build\Target 1\main.o (MAIN)
+Program Size: data=43.0 xdata=0 const=0 code=474
+LX51 RUN COMPLETE.  0 WARNING(S),  1 ERROR(S)
+
+
+[2022-02-20 13:54:00]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统\build\Target 1\智能书房系统.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Key.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o",".\build\Target 1\pwm.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\pwm.o (PWM)
+   DEFINED:  .\build\Target 1\main.o (MAIN)
+Program Size: data=43.0 xdata=0 const=0 code=474
+LX51 RUN COMPLETE.  0 WARNING(S),  1 ERROR(S)
+
+
+[2022-02-20 13:59:37]	compilation failed at : "c:\Users\17752352458\Desktop\草稿\智能书房系统\pwm.c", exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x0187a] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+C51 COMPILER V9.54 - SN: K1DZC-GZIKNC
+COPYRIGHT Copyright (C) 2012 - 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+*** ERROR C202 IN LINE 30 OF .\PWM.C: 'num_count': undefined identifier
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)
+
+[2022-02-20 13:59:52]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统\build\Target 1\智能书房系统.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Key.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o",".\build\Target 1\pwm.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\pwm.o (PWM)
+   DEFINED:  .\build\Target 1\main.o (MAIN)
+Program Size: data=43.0 xdata=0 const=0 code=474
+LX51 RUN COMPLETE.  0 WARNING(S),  1 ERROR(S)
+
+
+[2022-02-20 14:00:18]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统\build\Target 1\智能书房系统.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Key.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o",".\build\Target 1\pwm.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\pwm.o (PWM)
+   DEFINED:  .\build\Target 1\main.o (MAIN)
+Program Size: data=43.0 xdata=0 const=0 code=474
+LX51 RUN COMPLETE.  0 WARNING(S),  1 ERROR(S)
+
+
+[2022-02-20 14:03:22]	[done]
+	build successfully !
+
+[2022-02-20 16:43:49]	[done]
+	build successfully !
+
+[2022-02-20 16:49:22]	[done]
+	build successfully !
+
+[2022-02-20 17:02:23]	[done]
+	build successfully !
+
+[2022-02-20 17:49:08]	[done]
+	build successfully !
+
+[2022-02-20 18:46:42]	compilation failed at : "c:\Users\17752352458\Desktop\草稿\智能书房系统\main.c", exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x0187a] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+C51 COMPILER V9.54 - SN: K1DZC-GZIKNC
+COPYRIGHT Copyright (C) 2012 - 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+*** ERROR C100 IN LINE 76 OF .\MAIN.C: unprintable character 0xEF skipped
+*** ERROR C100 IN LINE 76 OF .\MAIN.C: unprintable character 0xBC skipped
+*** ERROR C100 IN LINE 76 OF .\MAIN.C: unprintable character 0x9B skipped
+*** ERROR C141 IN LINE 78 OF .\MAIN.C: syntax error near 'while'
+C51 COMPILATION COMPLETE.  0 WARNING(S),  4 ERROR(S)
+
+[2022-02-20 18:47:26]	[done]
+	build successfully !
+
+[2022-02-20 18:51:44]	[done]
+	build successfully !
+
+[2022-02-20 19:27:03]	[done]
+	build successfully !
+
+[2022-02-20 19:44:30]	[done]
+	build successfully !
+
+[2022-02-20 19:49:28]	[done]
+	build successfully !
+
+[2022-02-20 19:49:59]	[done]
+	build successfully !
+
+[2022-02-20 20:00:15]	[done]
+	build successfully !
+
+[2022-02-20 20:03:49]	[done]
+	build successfully !
+
+[2022-02-20 20:05:16]	[done]
+	build successfully !
+
+[2022-02-20 20:05:46]	[done]
+	build successfully !
+
+[2022-02-20 20:08:42]	[done]
+	build successfully !
+
+[2022-02-20 20:12:44]	compilation failed at : "c:\Users\17752352458\Desktop\草稿\智能书房系统\main.c", exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x0187a] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+C51 COMPILER V9.54 - SN: K1DZC-GZIKNC
+COPYRIGHT Copyright (C) 2012 - 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+*** ERROR C202 IN LINE 75 OF .\MAIN.C: 'i': undefined identifier
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)
+
+[2022-02-20 20:12:57]	[done]
+	build successfully !
+
+[2022-02-20 20:15:06]	compilation failed at : "c:\Users\17752352458\Desktop\草稿\智能书房系统\main.c", exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x0187a] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+C51 COMPILER V9.54 - SN: K1DZC-GZIKNC
+COPYRIGHT Copyright (C) 2012 - 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+*** ERROR C202 IN LINE 91 OF .\MAIN.C: 'i': undefined identifier
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)
+
+[2022-02-20 20:15:17]	[done]
+	build successfully !
+
+[2022-02-20 20:41:19]	compilation failed at : "c:\Users\17752352458\Desktop\草稿\智能书房系统\main.c", exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x0187a] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+C51 COMPILER V9.54 - SN: K1DZC-GZIKNC
+COPYRIGHT Copyright (C) 2012 - 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+*** ERROR C231 IN LINE 33 OF .\MAIN.C: 'HWX': redefinition
+*** ERROR C202 IN LINE 36 OF .\MAIN.C: 'HWM': undefined identifier
+*** ERROR C202 IN LINE 36 OF .\MAIN.C: 'HWM': undefined identifier
+*** ERROR C202 IN LINE 37 OF .\MAIN.C: 'HWM': undefined identifier
+*** ERROR C202 IN LINE 37 OF .\MAIN.C: 'HWM': undefined identifier
+*** ERROR C231 IN LINE 40 OF .\MAIN.C: 'HWX': redefinition
+C51 COMPILATION COMPLETE.  0 WARNING(S),  6 ERROR(S)
+
+[2022-02-20 20:42:55]	compilation failed at : "c:\Users\17752352458\Desktop\草稿\智能书房系统\main.c", exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x0187a] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+C51 COMPILER V9.54 - SN: K1DZC-GZIKNC
+COPYRIGHT Copyright (C) 2012 - 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+*** ERROR C231 IN LINE 33 OF .\MAIN.C: 'HWX': redefinition
+*** ERROR C231 IN LINE 40 OF .\MAIN.C: 'HWX': redefinition
+C51 COMPILATION COMPLETE.  0 WARNING(S),  2 ERROR(S)
+
+[2022-02-20 20:47:25]	[done]
+	build successfully !
+
+[2022-02-20 20:48:15]	[done]
+	build successfully !
+
+[2022-02-20 20:53:33]	[done]
+	build successfully !
+
+[2022-02-20 20:58:38]	[done]
+	build successfully !
+
+[2022-02-20 21:03:25]	[done]
+	build successfully !
+
+[2022-02-20 21:06:36]	[done]
+	build successfully !
+
+[2022-02-20 21:08:24]	[done]
+	build successfully !
+
+[2022-02-20 21:09:29]	[done]
+	build successfully !
+
+[2022-02-20 21:11:50]	[done]
+	build successfully !
+
+[2022-02-20 21:12:12]	[done]
+	build successfully !
+
+[2022-02-20 21:14:24]	[done]
+	build successfully !
+
+[2022-02-20 21:19:34]	[done]
+	build successfully !
+
+[2022-02-20 21:27:06]	[done]
+	build successfully !
+
+[2022-02-20 21:27:23]	[done]
+	build successfully !
+
+[2022-02-20 21:29:17]	[done]
+	build successfully !
+
+[2022-02-20 21:34:28]	[done]
+	build successfully !
+
+[2022-02-20 21:36:30]	[done]
+	build successfully !
+
+[2022-02-21 00:13:55]	[done]
+	build successfully !
+
+[2022-02-21 00:17:01]	[done]
+	build successfully !
+
+[2022-02-21 00:38:05]	[done]
+	build successfully !
+
+[2022-02-21 00:39:47]	[done]
+	build successfully !
+
+[2022-02-21 00:43:46]	[done]
+	build successfully !
+
+[2022-02-21 00:52:03]	[done]
+	build successfully !
+
+[2022-02-21 00:55:20]	[done]
+	build successfully !
+
+[2022-02-21 01:20:48]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统\build\Target 1\智能书房系统.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Key.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o",".\build\Target 1\pwm.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  reset
+    MODULE:  .\build\Target 1\main.o (MAIN)
+Program Size: data=36.0 xdata=0 const=0 code=643
+LX51 RUN COMPLETE.  0 WARNING(S),  1 ERROR(S)
+
+
+[2022-02-21 01:22:02]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统\build\Target 1\智能书房系统.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Key.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o",".\build\Target 1\pwm.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  reset
+    MODULE:  .\build\Target 1\main.o (MAIN)
+Program Size: data=36.0 xdata=0 const=0 code=640
+LX51 RUN COMPLETE.  0 WARNING(S),  1 ERROR(S)
+
+
+[2022-02-21 01:22:52]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统\build\Target 1\智能书房系统.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Key.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o",".\build\Target 1\pwm.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  reset
+    MODULE:  .\build\Target 1\main.o (MAIN)
+Program Size: data=36.0 xdata=0 const=0 code=640
+LX51 RUN COMPLETE.  0 WARNING(S),  1 ERROR(S)
+
+
+[2022-02-21 01:23:20]	compilation failed at : "c:\Users\17752352458\Desktop\草稿\智能书房系统\Reset.c", exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x0187a] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+C51 COMPILER V9.54 - SN: K1DZC-GZIKNC
+COPYRIGHT Copyright (C) 2012 - 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+*** ERROR C300 IN LINE 43 OF .\RESET.C: unterminated comment
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)
+
+[2022-02-21 01:23:38]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统\build\Target 1\智能书房系统.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Key.o",".\build\Target 1\Reset.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o",".\build\Target 1\pwm.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  main
+    MODULE:  .\build\Target 1\main.o (MAIN)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L102: EXTERNAL ATTRIBUTE MISMATCH
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+    ADDRESS: 1000033H
+Program Size: data=35.0 xdata=0 const=0 code=311
+LX51 RUN COMPLETE.  0 WARNING(S),  3 ERROR(S)
+
+
+[2022-02-21 01:23:55]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统\build\Target 1\智能书房系统.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Key.o",".\build\Target 1\Reset.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o",".\build\Target 1\pwm.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  main
+    MODULE:  .\build\Target 1\main.o (MAIN)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L102: EXTERNAL ATTRIBUTE MISMATCH
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+    ADDRESS: 1000033H
+Program Size: data=35.0 xdata=0 const=0 code=311
+LX51 RUN COMPLETE.  0 WARNING(S),  3 ERROR(S)
+
+
+[2022-02-21 01:30:11]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统\build\Target 1\智能书房系统.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Key.o",".\build\Target 1\Reset.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o",".\build\Target 1\pwm.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  main
+    MODULE:  .\build\Target 1\main.o (MAIN)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L102: EXTERNAL ATTRIBUTE MISMATCH
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+    ADDRESS: 1000033H
+Program Size: data=35.0 xdata=0 const=0 code=311
+LX51 RUN COMPLETE.  0 WARNING(S),  3 ERROR(S)
+
+
+[2022-02-21 01:30:27]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统\build\Target 1\智能书房系统.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Key.o",".\build\Target 1\Reset.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o",".\build\Target 1\pwm.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  main
+    MODULE:  .\build\Target 1\main.o (MAIN)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L102: EXTERNAL ATTRIBUTE MISMATCH
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+    ADDRESS: 1000033H
+Program Size: data=35.0 xdata=0 const=0 code=311
+LX51 RUN COMPLETE.  0 WARNING(S),  3 ERROR(S)
+
+
+[2022-02-21 01:32:11]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统\build\Target 1\智能书房系统.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Key.o",".\build\Target 1\Reset.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o",".\build\Target 1\pwm.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  main
+    MODULE:  .\build\Target 1\main.o (MAIN)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L102: EXTERNAL ATTRIBUTE MISMATCH
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+    ADDRESS: 1000033H
+Program Size: data=35.0 xdata=0 const=0 code=311
+LX51 RUN COMPLETE.  0 WARNING(S),  3 ERROR(S)
+
+
+[2022-02-21 01:49:39]	compilation failed at : "c:\Users\17752352458\Desktop\草稿\智能书房系统\Timer0.c", exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x0187a] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+C51 COMPILER V9.54 - SN: K1DZC-GZIKNC
+COPYRIGHT Copyright (C) 2012 - 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+*** ERROR C300 IN LINE 39 OF .\TIMER0.C: unterminated comment
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)
+
+[2022-02-21 01:49:56]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统\build\Target 1\智能书房系统.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Key.o",".\build\Target 1\Reset.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o",".\build\Target 1\pwm.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  main
+    MODULE:  .\build\Target 1\main.o (MAIN)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L102: EXTERNAL ATTRIBUTE MISMATCH
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+    ADDRESS: 1000033H
+Program Size: data=35.0 xdata=0 const=0 code=314
+LX51 RUN COMPLETE.  0 WARNING(S),  3 ERROR(S)
+
+
+[2022-02-21 12:56:08]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统2.21修改\build\Target 1\智能书房系统2.21修改.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o" TO ".\build\Target 1\智能书房系统2.21修改"
+PRINT(".\build\Target 1\智能书房系统2.21修改.map") REMOVEUNUSED
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  PWM_off
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  reset
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  Key
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  PWM_up
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Key
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 10001C4H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  PWM_up
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 100002AH
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Key
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 100004EH
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  PWM_off
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 1000054H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 1000058H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 1000065H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 100006DH
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 1000074H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  PWM_up
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 100009AH
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  reset
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 10000AFH
+Program Size: data=28.0 xdata=0 const=0 code=482
+LX51 RUN COMPLETE.  0 WARNING(S),  15 ERROR(S)
+
+
+[2022-02-21 12:57:12]	compilation failed at : "c:\Users\17752352458\Desktop\草稿\智能书房系统2.21修改\main.c", exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x0187a] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+C51 COMPILER V9.54 - SN: K1DZC-GZIKNC
+COPYRIGHT Copyright (C) 2012 - 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+*** ERROR C146 IN LINE 12 OF .\MAIN.C: 'P11': invalid base address
+*** ERROR C146 IN LINE 13 OF .\MAIN.C: 'P10': invalid base address
+*** ERROR C146 IN LINE 14 OF .\MAIN.C: 'P12': invalid base address
+*** ERROR C146 IN LINE 16 OF .\MAIN.C: 'P13': invalid base address
+*** ERROR C146 IN LINE 17 OF .\MAIN.C: 'P14': invalid base address
+*** ERROR C202 IN LINE 66 OF .\MAIN.C: 'HWX': undefined identifier
+*** ERROR C202 IN LINE 69 OF .\MAIN.C: 'HWX': undefined identifier
+*** ERROR C202 IN LINE 115 OF .\MAIN.C: 'LED': undefined identifier
+*** ERROR C202 IN LINE 118 OF .\MAIN.C: 'LED': undefined identifier
+*** ERROR C202 IN LINE 151 OF .\MAIN.C: 'LED': undefined identifier
+*** ERROR C202 IN LINE 154 OF .\MAIN.C: 'LED': undefined identifier
+*** ERROR C202 IN LINE 158 OF .\MAIN.C: 'LED': undefined identifier
+C51 COMPILATION COMPLETE.  0 WARNING(S),  12 ERROR(S)
+
+[2022-02-21 12:57:39]	compilation failed at : "c:\Users\17752352458\Desktop\草稿\智能书房系统2.21修改\main.c", exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x0187a] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+C51 COMPILER V9.54 - SN: K1DZC-GZIKNC
+COPYRIGHT Copyright (C) 2012 - 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+*** ERROR C279 IN LINE 196 OF .\MAIN.C: 'SBUF_review': multiple initialization
+*** ERROR C231 IN LINE 197 OF .\MAIN.C: 'key1': redefinition
+*** ERROR C231 IN LINE 198 OF .\MAIN.C: 'key2': redefinition
+*** ERROR C202 IN LINE 212 OF .\MAIN.C: 'T0Count': undefined identifier
+*** ERROR C237 IN LINE 219 OF .\MAIN.C: 'main': function already has a body
+*** ERROR C237 IN LINE 227 OF .\MAIN.C: 'UART_Routine': function already has a body
+*** ERROR C141 IN LINE 228 OF .\MAIN.C: syntax error near '/'
+C51 COMPILATION COMPLETE.  0 WARNING(S),  7 ERROR(S)
+
+[2022-02-21 12:58:07]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统2.21修改\build\Target 1\智能书房系统2.21修改.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o" TO ".\build\Target 1\智能书房系统2.21修改"
+PRINT(".\build\Target 1\智能书房系统2.21修改.map") REMOVEUNUSED
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  PWM_off
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  reset
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  Key
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  PWM_up
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Key
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 10001C4H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  PWM_up
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 100002AH
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Key
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 100004EH
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  PWM_off
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 1000054H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 1000058H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 1000065H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 100006DH
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 1000074H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  PWM_up
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 100009AH
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  reset
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 10000AFH
+Program Size: data=28.0 xdata=0 const=0 code=482
+LX51 RUN COMPLETE.  0 WARNING(S),  15 ERROR(S)
+
+
+[2022-02-21 12:58:47]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统2.21修改\build\Target 1\智能书房系统2.21修改.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o" TO ".\build\Target 1\智能书房系统2.21修改"
+PRINT(".\build\Target 1\智能书房系统2.21修改.map") REMOVEUNUSED
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  PWM_off
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  reset
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  Key
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  PWM_up
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Key
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 10001C4H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  PWM_up
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 100002AH
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Key
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 100004EH
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  PWM_off
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 1000054H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 1000058H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 1000065H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 100006DH
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 1000074H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  PWM_up
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 100009AH
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  reset
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 10000AFH
+Program Size: data=28.0 xdata=0 const=0 code=482
+LX51 RUN COMPLETE.  0 WARNING(S),  15 ERROR(S)
+
+
+[2022-02-21 12:59:03]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统2.21修改\build\Target 1\智能书房系统2.21修改.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o" TO ".\build\Target 1\智能书房系统2.21修改"
+PRINT(".\build\Target 1\智能书房系统2.21修改.map") REMOVEUNUSED
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  PWM_off
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  reset
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  Key
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  PWM_up
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\main.o (MAIN)
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Key
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 10001C4H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  PWM_up
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 100002AH
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Key
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 100004EH
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  PWM_off
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 1000054H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 1000058H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 1000065H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 100006DH
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  num_count
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 1000074H
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  PWM_up
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 100009AH
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  reset
+    MODULE:  .\build\Target 1\main.o (MAIN)
+    ADDRESS: 10000AFH
+Program Size: data=28.0 xdata=0 const=0 code=482
+LX51 RUN COMPLETE.  0 WARNING(S),  15 ERROR(S)
+
+
+[2022-02-21 13:01:20]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统2.21修改\build\Target 1\智能书房系统2.21修改.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Key.o",".\build\Target 1\Reset.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o",".\build\Target 1\pwm.o" TO ".\build\Target 1\智能书房系统2.21修改"
+PRINT(".\build\Target 1\智能书房系统2.21修改.map") REMOVEUNUSED
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  main
+    MODULE:  .\build\Target 1\main.o (MAIN)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L102: EXTERNAL ATTRIBUTE MISMATCH
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+    ADDRESS: 1000033H
+Program Size: data=35.0 xdata=0 const=0 code=314
+LX51 RUN COMPLETE.  0 WARNING(S),  3 ERROR(S)
+
+
+[2022-02-21 13:02:48]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统2.21修改\build\Target 1\智能书房系统2.21修改.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Key.o",".\build\Target 1\Reset.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o",".\build\Target 1\pwm.o" TO ".\build\Target 1\智能书房系统2.21修改"
+PRINT(".\build\Target 1\智能书房系统2.21修改.map") REMOVEUNUSED
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  main
+    MODULE:  .\build\Target 1\main.o (MAIN)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L102: EXTERNAL ATTRIBUTE MISMATCH
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+    ADDRESS: 1000033H
+Program Size: data=35.0 xdata=0 const=0 code=314
+LX51 RUN COMPLETE.  0 WARNING(S),  3 ERROR(S)
+
+
+[2022-02-21 13:03:07]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统2.21修改\build\Target 1\智能书房系统2.21修改.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Key.o",".\build\Target 1\Reset.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o",".\build\Target 1\pwm.o" TO ".\build\Target 1\智能书房系统2.21修改"
+PRINT(".\build\Target 1\智能书房系统2.21修改.map") REMOVEUNUSED
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  main
+    MODULE:  .\build\Target 1\main.o (MAIN)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L102: EXTERNAL ATTRIBUTE MISMATCH
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+    ADDRESS: 1000033H
+Program Size: data=35.0 xdata=0 const=0 code=314
+LX51 RUN COMPLETE.  0 WARNING(S),  3 ERROR(S)
+
+
+[2022-02-21 13:04:49]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统2.21修改\build\Target 1\智能书房系统2.21修改.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Key.o",".\build\Target 1\Reset.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o",".\build\Target 1\pwm.o" TO ".\build\Target 1\智能书房系统2.21修改"
+PRINT(".\build\Target 1\智能书房系统2.21修改.map") REMOVEUNUSED
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  main
+    MODULE:  .\build\Target 1\main.o (MAIN)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L102: EXTERNAL ATTRIBUTE MISMATCH
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+    ADDRESS: 1000033H
+Program Size: data=35.0 xdata=0 const=0 code=314
+LX51 RUN COMPLETE.  0 WARNING(S),  3 ERROR(S)
+
+
+[2022-02-21 13:13:45]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统2.21修改\build\Target 1\智能书房系统2.21修改.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Key.o",".\build\Target 1\Reset.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o",".\build\Target 1\pwm.o" TO ".\build\Target 1\智能书房系统2.21修改"
+PRINT(".\build\Target 1\智能书房系统2.21修改.map") REMOVEUNUSED
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  main
+    MODULE:  .\build\Target 1\main.o (MAIN)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L102: EXTERNAL ATTRIBUTE MISMATCH
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+    ADDRESS: 1000033H
+Program Size: data=35.0 xdata=0 const=0 code=314
+LX51 RUN COMPLETE.  0 WARNING(S),  3 ERROR(S)
+
+
+[2022-02-21 13:18:07]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统2.21修改\build\Target 1\智能书房系统2.21修改.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Key.o",".\build\Target 1\Reset.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o",".\build\Target 1\pwm.o" TO ".\build\Target 1\智能书房系统2.21修改"
+PRINT(".\build\Target 1\智能书房系统2.21修改.map") REMOVEUNUSED
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  main
+    MODULE:  .\build\Target 1\main.o (MAIN)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L102: EXTERNAL ATTRIBUTE MISMATCH
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+    ADDRESS: 1000033H
+Program Size: data=35.0 xdata=0 const=0 code=314
+LX51 RUN COMPLETE.  0 WARNING(S),  3 ERROR(S)
+
+
+[2022-02-21 13:19:40]	compilation failed at : "c:\Users\17752352458\Desktop\草稿\智能书房系统2.21修改\Key.c", exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x0187a] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+C51 COMPILER V9.54 - SN: K1DZC-GZIKNC
+COPYRIGHT Copyright (C) 2012 - 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+*** ERROR C202 IN LINE 13 OF .\KEY.C: 'P1_3': undefined identifier
+*** ERROR C202 IN LINE 13 OF .\KEY.C: 'P1_3': undefined identifier
+*** ERROR C202 IN LINE 14 OF .\KEY.C: 'P1_4': undefined identifier
+*** ERROR C202 IN LINE 14 OF .\KEY.C: 'P1_4': undefined identifier
+C51 COMPILATION COMPLETE.  0 WARNING(S),  4 ERROR(S)
+
+[2022-02-21 13:20:12]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统2.21修改\build\Target 1\智能书房系统2.21修改.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Key.o",".\build\Target 1\Reset.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o",".\build\Target 1\pwm.o" TO ".\build\Target 1\智能书房系统2.21修改"
+PRINT(".\build\Target 1\智能书房系统2.21修改.map") REMOVEUNUSED
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  main
+    MODULE:  .\build\Target 1\main.o (MAIN)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L102: EXTERNAL ATTRIBUTE MISMATCH
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+    ADDRESS: 1000033H
+Program Size: data=35.0 xdata=0 const=0 code=314
+LX51 RUN COMPLETE.  0 WARNING(S),  3 ERROR(S)
+
+
+[2022-02-21 13:29:26]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统2.21修改\build\Target 1\智能书房系统2.21修改.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Key.o",".\build\Target 1\Reset.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o",".\build\Target 1\pwm.o" TO ".\build\Target 1\智能书房系统2.21修改"
+PRINT(".\build\Target 1\智能书房系统2.21修改.map") REMOVEUNUSED
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  main
+    MODULE:  .\build\Target 1\main.o (MAIN)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L102: EXTERNAL ATTRIBUTE MISMATCH
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+    ADDRESS: 1000033H
+Program Size: data=35.0 xdata=0 const=0 code=314
+LX51 RUN COMPLETE.  0 WARNING(S),  3 ERROR(S)
+
+
+[2022-02-21 13:30:07]	link failed !, exit code: 2
+  at unify_builder.Program.Main (System.String[] args) [0x01a1e] in <67d11e1b30504dd6babd321425698ba1>:0 
+---
+LX51 LINKER/LOCATER V4.66.41.0 - SN: K1DZC-GZIKNC
+COPYRIGHT ARM Germany GmbH 1995 - 2015
+"@c:\Users\17752352458\Desktop\草稿\智能书房系统2.21修改\build\Target 1\智能书房系统2.21修改.lnp" 
+".\build\Target 1\Delay.o",".\build\Target 1\Key.o",".\build\Target 1\Reset.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o",".\build\Target 1\pwm.o" TO ".\build\Target 1\智能书房系统2.21修改"
+PRINT(".\build\Target 1\智能书房系统2.21修改.map") REMOVEUNUSED
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  main
+    MODULE:  .\build\Target 1\main.o (MAIN)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L102: EXTERNAL ATTRIBUTE MISMATCH
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+   DEFINED:  .\build\Target 1\Reset.o (RESET)
+*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
+    SYMBOL:  main
+    MODULE:  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+    ADDRESS: 1000033H
+Program Size: data=35.0 xdata=0 const=0 code=314
+LX51 RUN COMPLETE.  0 WARNING(S),  3 ERROR(S)
+
+
+[2022-02-21 13:33:23]	[done]
+	build successfully !
+

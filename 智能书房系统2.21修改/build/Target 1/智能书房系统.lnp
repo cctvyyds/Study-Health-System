@@ -1,0 +1,3 @@
+
+".\build\Target 1\Delay.o",".\build\Target 1\Key.o",".\build\Target 1\Reset.o",".\build\Target 1\Timer0.o",".\build\Target 1\UART.o",".\build\Target 1\main.o",".\build\Target 1\pwm.o" TO ".\build\Target 1\智能书房系统"
+PRINT(".\build\Target 1\智能书房系统.map") REMOVEUNUSED

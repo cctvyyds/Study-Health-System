@@ -1,0 +1,693 @@
+C51 COMPILER V9.54   MAIN                                                                  02/21/2022 13:33:20 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\build\Target 1\main.o
+COMPILER INVOKED BY: E:\kiel5\C51\BIN\C51.exe .\MAIN.C PRINT(.\build\Target 1\main.lst) OMF2 TABS(4) CODE NOCOND SYMBOLS
+                    - OPTIMIZE(8,SPEED) SMALL ROM(LARGE) INCDIR(E:\kiel5\C51\INC\Atmel;E:\kiel5\C51\INC) DEFINE(__UVISION_VERSION=526) OBJECT
+                    -(.\build\Target 1\main.o)
+
+line level    source
+
+   1          #include "STC89Cxx.h"
+   2          #include "intrins.h"
+   3          #include "UART.h"
+   4          #include "Delay.h"
+   5          #include "Timer0.h"
+   6          #include "Key.h"
+   7          #include "pwm.h"
+   8          #include "Reset.h"
+   9          
+  10          #define uchar unsigned char //宏定义，.相当于用uchar代替长度较长的unsigned char
+  11          #define uint unsigned int
+  12          sbit LED=P1^1;
+  13          sbit HWX=P1^0;
+  14          sbit PWM=P1^2;
+  15          
+  16          sbit key1=P1^3;
+  17          sbit key2=P1^4;
+  18          
+  19          uint a = 1;//关闭数码管显示的媒介
+  20          uchar num=0;   //周期数
+  21          uchar num_residue=0;   //剩余周期数
+  22          uchar SBUF_review = 0  ;//定义SBUF接收
+  23          uchar shuma[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f};//数码管段码
+  24          
+  25          
+  26          /*方法1，
+  27          /**
+  28            * @brief  确定人是否在区域内+防误判，有10s延时，可调
+  29            * @param  无
+  30            * @retval 无
+  31            
+  32          uint HWX_2()
+  33          {
+  34              unsigned char cd=0;//静态局部变量
+  35              
+  36              if(HWX==0)
+  37            {
+  38              Delay(10000);
+  39              while(HWX==1);
+  40              Delay(20);
+  41              cd=0;
+  42              }
+  43              if(HWX==1)
+  44            {
+  45              Delay(20);
+  46              while(HWX==0);
+  47              Delay(20);
+  48              cd=1;
+  49              }
+  50              
+  51              return cd;
+  52          }
+  53          */
+C51 COMPILER V9.54   MAIN                                                                  02/21/2022 13:33:20 PAGE 2   
+
+  54          
+  55          
+  56          /**
+  57            * @brief  红外模块确定人是否在区域内+防误判，有延时，可调
+  58            * @param  无
+  59            * @retval 无
+  60            *
+  61            */
+  62          uint HWX_2()
+  63              {
+  64   1            static uint flag =0,lastflag = 0;
+  65   1            lastflag = flag;
+  66   1            if (HWX == 0)
+  67   1            {
+  68   2             Delay(100);
+  69   2                 if (HWX == 0)
+  70   2                 {
+  71   3                   flag = 0;
+  72   3                 }else
+  73   2                 {
+  74   3                  flag =1;
+  75   3                 }
+  76   2            }else 
+  77   1            { 
+  78   2                flag =1;
+  79   2            }
+  80   1            if (flag && lastflag)
+  81   1            {
+  82   2             return 1;
+  83   2            }else
+  84   1            {
+  85   2               return 0;
+  86   2            }
+  87   1          }
+  88          
+  89          
+  90          void key_1() //按键扫描函数//按键扫描1，用于记录周期数
+  91          {  
+  92   1        if( Key() == 1)
+  93   1         {
+  94   2         num++;
+  95   2         }
+  96   1          
+  97   1       if(num>9)
+  98   1            {
+  99   2           num=0;
+ 100   2            }
+ 101   1      }
+ 102           
+ 103          
+ 104          void main ()
+ 105          {
+ 106   1        
+ 107   1      
+ 108   1        Timer0Init();//500um定时器开始工作
+ 109   1        
+ 110   1        while(1)
+ 111   1         { 
+ 112   2           PWM_up();//舵机开
+ 113   2            if( HWX_2()==1)//红外线部分
+ 114   2             {    
+ 115   3             LED=0;
+C51 COMPILER V9.54   MAIN                                                                  02/21/2022 13:33:20 PAGE 3   
+
+ 116   3             }else if( HWX_2()==0)
+ 117   2                      {
+ 118   3                      LED=1;
+ 119   3                      }//如果红外线没检测到人，灭灯
+ 120   2         
+ 121   2         key_1(); //按键扫描函数周期扫描
+ 122   2        
+ 123   2         P2 = shuma[num];//数码管显示周期数
+ 124   2         
+ 125   2         if(Key() ==2)//不知道为什么，，HWM=1的时候按键2没反应，这样也挺好
+ 126   2          {   
+ 127   3              PWM_off();//舵机关
+ 128   3              break;//跳出该While循环
+ 129   3              
+ 130   3           }
+ 131   2         } 
+ 132   1            num_count = 0;
+ 133   1            UART_Init();//串口初始化声明
+ 134   1          while(1)
+ 135   1          { 
+ 136   2          if(a==1)
+ 137   2          {
+ 138   3         if(num_count>num)
+ 139   3          {
+ 140   4              num_count = 0;
+ 141   4          }else{
+ 142   4             num_residue = num - num_count;//剩余周期数
+ 143   4             P2 = shuma[num_residue];//数码管显示剩余周期数
+ 144   4               }
+ 145   3           
+ 146   3          }
+ 147   2            
+ 148   2             
+ 149   2            if( HWX_2()==1)//红外线部分
+ 150   2             {    
+ 151   3             LED=0;
+ 152   3             }else if( HWX_2()==0)
+ 153   2                      {
+ 154   3                      LED=1;
+ 155   3                      }//如果红外线没检测到人，灭灯
+ 156   2             if(num_residue == 0)//周期为0
+ 157   2          {
+ 158   3             LED=1;//灭灯
+ 159   3             PWM_up();//舵机开 
+ 160   3             P2 = shuma[0];//数码管显示剩余周期数  
+ 161   3             a = 0 ;// 数码管一直显示0
+ 162   3           UART_SendByte(3);//串口发送3给B单片机
+ 163   3           if(SBUF_review == 2)
+ 164   3           {
+ 165   4            /*SWBS = 0;
+ 166   4            SERST = 1;*/
+ 167   4             reset ();//系统软件复位
+ 168   4           }
+ 169   3      
+ 170   3          }
+ 171   2          } 
+ 172   1      }
+ 173          
+ 174          
+ 175          
+ 176          void UART_Routine() interrupt 4
+ 177          {
+C51 COMPILER V9.54   MAIN                                                                  02/21/2022 13:33:20 PAGE 4   
+
+ 178   1          if(RI==1)
+ 179   1          {
+ 180   2          SBUF_review = SBUF;
+ 181   2              RI=0;
+ 182   2          }
+ 183   1      }
+ 184          
+ 185          
+ 186          //定时器中断在pwm.c里
+ 187           //,如果实际操作中舵机抖动，加这句ES=0;            //关闭串行口中断允许控制位
+ 188          
+ 189          
+ 190          
+ 191          
+ 192          /*B单片机的代码
+ 193          #include "STC89Cxx.h"
+ 194          #include "UART.h"
+ 195          #include "Timer0.h"
+ 196          
+ 197          unsigned char SBUF_review =0 ;
+ 198          sbit key1=P1^3;
+ 199          sbit key2=P1^4;
+ 200          sbit key3=P1^5;
+ 201          sbit key4=P1^6;//用于姿势矫正的按钮
+ 202          
+ 203          
+ 204          void main()
+ 205          {
+ 206          void UART_Init();
+ 207          while (1)
+ 208          {
+ 209           if (SBUF_review == 3)
+ 210           {
+ 211               if(key1 && key2 && key3 && key4 ==0  )
+ 212               {
+ 213                     if(T0Count ==20000)//定时器10s
+ 214                          {
+ 215                            UART_SendByte(2);
+ 216                          }
+ 217               }
+ 218           }
+ 219           }
+ 220          }
+ 221          
+ 222          void UART_Routine() interrupt 4
+ 223          {
+ 224              if(RI==1)
+ 225              {SBUF_review = SBUF;
+ 226                  RI=0;
+ 227              }
+ 228          }
+ 229          */
+ 230          
+ 231          
+C51 COMPILER V9.54   MAIN                                                                  02/21/2022 13:33:20 PAGE 5   
+
+ASSEMBLY LISTING OF GENERATED OBJECT CODE
+
+
+             ; FUNCTION HWX_2 (BEGIN)
+                                           ; SOURCE LINE # 62
+                                           ; SOURCE LINE # 63
+                                           ; SOURCE LINE # 65
+0000 850000      R     MOV     lastflag,flag
+0003 850000      R     MOV     lastflag+01H,flag+01H
+                                           ; SOURCE LINE # 66
+0006 209011            JB      HWX,?C0001
+                                           ; SOURCE LINE # 67
+                                           ; SOURCE LINE # 68
+0009 7F64              MOV     R7,#064H
+000B 7E00              MOV     R6,#00H
+000D 120000      E     LCALL   _Delay
+                                           ; SOURCE LINE # 69
+0010 209007            JB      HWX,?C0030
+                                           ; SOURCE LINE # 70
+                                           ; SOURCE LINE # 71
+0013 E4                CLR     A
+0014 F500        R     MOV     flag,A
+0016 F500        R     MOV     flag+01H,A
+                                           ; SOURCE LINE # 72
+0018 8006              SJMP    ?C0004
+001A         ?C0001:
+                                           ; SOURCE LINE # 77
+                                           ; SOURCE LINE # 78
+001A         ?C0030:
+001A 750000      R     MOV     flag,#00H
+001D 750001      R     MOV     flag+01H,#01H
+                                           ; SOURCE LINE # 79
+0020         ?C0004:
+                                           ; SOURCE LINE # 80
+0020 E500        R     MOV     A,flag+01H
+0022 4500        R     ORL     A,flag
+0024 600B              JZ      ?C0005
+0026 E500        R     MOV     A,lastflag+01H
+0028 4500        R     ORL     A,lastflag
+002A 6005              JZ      ?C0005
+                                           ; SOURCE LINE # 81
+                                           ; SOURCE LINE # 82
+002C 7E00              MOV     R6,#00H
+002E 7F01              MOV     R7,#01H
+0030 22                RET     
+                                           ; SOURCE LINE # 83
+0031         ?C0005:
+                                           ; SOURCE LINE # 84
+                                           ; SOURCE LINE # 85
+0031 E4                CLR     A
+0032 FE                MOV     R6,A
+0033 FF                MOV     R7,A
+                                           ; SOURCE LINE # 86
+                                           ; SOURCE LINE # 87
+0034         ?C0006:
+0034 22                RET     
+             ; FUNCTION HWX_2 (END)
+
+             ; FUNCTION key_1 (BEGIN)
+                                           ; SOURCE LINE # 90
+                                           ; SOURCE LINE # 91
+                                           ; SOURCE LINE # 92
+C51 COMPILER V9.54   MAIN                                                                  02/21/2022 13:33:20 PAGE 6   
+
+0000 120000      E     LCALL   Key
+0003 BF0102            CJNE    R7,#01H,?C0008
+                                           ; SOURCE LINE # 93
+                                           ; SOURCE LINE # 94
+0006 0500        R     INC     num
+                                           ; SOURCE LINE # 95
+0008         ?C0008:
+                                           ; SOURCE LINE # 97
+0008 E500        R     MOV     A,num
+000A D3                SETB    C
+000B 9409              SUBB    A,#09H
+000D 4003              JC      ?C0010
+                                           ; SOURCE LINE # 98
+                                           ; SOURCE LINE # 99
+000F E4                CLR     A
+0010 F500        R     MOV     num,A
+                                           ; SOURCE LINE # 100
+                                           ; SOURCE LINE # 101
+0012         ?C0010:
+0012 22                RET     
+             ; FUNCTION key_1 (END)
+
+             ; FUNCTION main (BEGIN)
+                                           ; SOURCE LINE # 104
+                                           ; SOURCE LINE # 105
+                                           ; SOURCE LINE # 108
+0000 120000      E     LCALL   Timer0Init
+0003         ?C0011:
+                                           ; SOURCE LINE # 110
+                                           ; SOURCE LINE # 111
+                                           ; SOURCE LINE # 112
+0003 120000      E     LCALL   PWM_up
+                                           ; SOURCE LINE # 113
+0006 120000      R     LCALL   HWX_2
+0009 EF                MOV     A,R7
+000A 6401              XRL     A,#01H
+000C 4E                ORL     A,R6
+000D 7004              JNZ     ?C0013
+                                           ; SOURCE LINE # 114
+                                           ; SOURCE LINE # 115
+000F C291              CLR     LED
+                                           ; SOURCE LINE # 116
+0011 8009              SJMP    ?C0014
+0013         ?C0013:
+0013 120000      R     LCALL   HWX_2
+0016 EF                MOV     A,R7
+0017 4E                ORL     A,R6
+0018 7002              JNZ     ?C0014
+                                           ; SOURCE LINE # 117
+                                           ; SOURCE LINE # 118
+001A D291              SETB    LED
+                                           ; SOURCE LINE # 119
+001C         ?C0014:
+                                           ; SOURCE LINE # 121
+001C 120000      R     LCALL   key_1
+                                           ; SOURCE LINE # 123
+001F 7400        R     MOV     A,#LOW shuma
+0021 2500        R     ADD     A,num
+0023 F8                MOV     R0,A
+0024 E6                MOV     A,@R0
+0025 F5A0              MOV     P2,A
+                                           ; SOURCE LINE # 125
+C51 COMPILER V9.54   MAIN                                                                  02/21/2022 13:33:20 PAGE 7   
+
+0027 120000      E     LCALL   Key
+002A BF02D6            CJNE    R7,#02H,?C0011
+                                           ; SOURCE LINE # 126
+                                           ; SOURCE LINE # 127
+002D 120000      E     LCALL   PWM_off
+                                           ; SOURCE LINE # 128
+                                           ; SOURCE LINE # 130
+                                           ; SOURCE LINE # 131
+0030         ?C0012:
+                                           ; SOURCE LINE # 132
+0030 E4                CLR     A
+0031 F500        E     MOV     num_count,A
+                                           ; SOURCE LINE # 133
+0033 120000      E     LCALL   UART_Init
+0036         ?C0017:
+                                           ; SOURCE LINE # 134
+                                           ; SOURCE LINE # 135
+                                           ; SOURCE LINE # 136
+0036 E500        R     MOV     A,a+01H
+0038 6401              XRL     A,#01H
+003A 4500        R     ORL     A,a
+003C 7019              JNZ     ?C0019
+                                           ; SOURCE LINE # 137
+                                           ; SOURCE LINE # 138
+003E E500        E     MOV     A,num_count
+0040 D3                SETB    C
+0041 9500        R     SUBB    A,num
+0043 4005              JC      ?C0020
+                                           ; SOURCE LINE # 139
+                                           ; SOURCE LINE # 140
+0045 E4                CLR     A
+0046 F500        E     MOV     num_count,A
+                                           ; SOURCE LINE # 141
+0048 800D              SJMP    ?C0019
+004A         ?C0020:
+                                           ; SOURCE LINE # 142
+004A C3                CLR     C
+004B E500        R     MOV     A,num
+004D 9500        E     SUBB    A,num_count
+004F F500        R     MOV     num_residue,A
+                                           ; SOURCE LINE # 143
+0051 2400        R     ADD     A,#LOW shuma
+0053 F8                MOV     R0,A
+0054 E6                MOV     A,@R0
+0055 F5A0              MOV     P2,A
+                                           ; SOURCE LINE # 144
+                                           ; SOURCE LINE # 146
+0057         ?C0019:
+                                           ; SOURCE LINE # 149
+0057 120000      R     LCALL   HWX_2
+005A EF                MOV     A,R7
+005B 6401              XRL     A,#01H
+005D 4E                ORL     A,R6
+005E 7004              JNZ     ?C0022
+                                           ; SOURCE LINE # 150
+                                           ; SOURCE LINE # 151
+0060 C291              CLR     LED
+                                           ; SOURCE LINE # 152
+0062 8009              SJMP    ?C0023
+0064         ?C0022:
+0064 120000      R     LCALL   HWX_2
+0067 EF                MOV     A,R7
+C51 COMPILER V9.54   MAIN                                                                  02/21/2022 13:33:20 PAGE 8   
+
+0068 4E                ORL     A,R6
+0069 7002              JNZ     ?C0023
+                                           ; SOURCE LINE # 153
+                                           ; SOURCE LINE # 154
+006B D291              SETB    LED
+                                           ; SOURCE LINE # 155
+006D         ?C0023:
+                                           ; SOURCE LINE # 156
+006D E500        R     MOV     A,num_residue
+006F 70C5              JNZ     ?C0017
+                                           ; SOURCE LINE # 157
+                                           ; SOURCE LINE # 158
+0071 D291              SETB    LED
+                                           ; SOURCE LINE # 159
+0073 120000      E     LCALL   PWM_up
+                                           ; SOURCE LINE # 160
+0076 8500A0      R     MOV     P2,shuma
+                                           ; SOURCE LINE # 161
+0079 E4                CLR     A
+007A F500        R     MOV     a,A
+007C F500        R     MOV     a+01H,A
+                                           ; SOURCE LINE # 162
+007E 7F03              MOV     R7,#03H
+0080 120000      E     LCALL   _UART_SendByte
+                                           ; SOURCE LINE # 163
+0083 E500        R     MOV     A,SBUF_review
+0085 B402AE            CJNE    A,#02H,?C0017
+                                           ; SOURCE LINE # 164
+                                           ; SOURCE LINE # 167
+0088 120000      E     LCALL   reset
+                                           ; SOURCE LINE # 168
+                                           ; SOURCE LINE # 170
+                                           ; SOURCE LINE # 171
+008B 80A9              SJMP    ?C0017
+             ; FUNCTION main (END)
+
+             ; FUNCTION UART_Routine (BEGIN)
+                                           ; SOURCE LINE # 176
+                                           ; SOURCE LINE # 178
+0000 309805            JNB     RI,?C0029
+                                           ; SOURCE LINE # 179
+                                           ; SOURCE LINE # 180
+0003 859900      R     MOV     SBUF_review,SBUF
+                                           ; SOURCE LINE # 181
+0006 C298              CLR     RI
+                                           ; SOURCE LINE # 182
+                                           ; SOURCE LINE # 183
+0008         ?C0029:
+0008 32                RETI    
+             ; FUNCTION UART_Routine (END)
+
+C51 COMPILER V9.54   MAIN                                                                  02/21/2022 13:33:20 PAGE 9   
+
+NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
+====                                    =====   ======  ====    ======  ====
+
+
+P0 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0080H  1
+P1 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0090H  1
+P2 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00A0H  1
+P3 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00B0H  1
+XICON. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C0H  1
+T0 . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B4H  1
+AC . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00D6H  1
+P4 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E8H  1
+T1 . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B5H  1
+ISP_TRIG . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E6H  1
+T2 . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0090H  1
+EA . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00AFH  1
+EC . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00AEH  1
+UART_Routine . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+HWX_2. . . . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+  flag . . . . . . . . . . . . . . . .  STATIC   DATA   U_INT    0000H  2
+  lastflag . . . . . . . . . . . . . .  STATIC   DATA   U_INT    0002H  2
+FE . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      009FH  1
+IE . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00A8H  1
+PWM_off. . . . . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
+EXF2 . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00CEH  1
+RD . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B7H  1
+ES . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00ACH  1
+IP . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00B8H  1
+RI . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0098H  1
+INT0 . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B2H  1
+CY . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00D7H  1
+TI . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0099H  1
+INT1 . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B3H  1
+shuma. . . . . . . . . . . . . . . . .  PUBLIC   DATA   ARRAY    0004H  10
+RCAP2H . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00CBH  1
+ISP_CMD. . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E5H  1
+PS . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00BCH  1
+SP . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0081H  1
+T2EX . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0091H  1
+OV . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00D2H  1
+reset. . . . . . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
+RCAP2L . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00CAH  1
+main . . . . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+SBUF_review. . . . . . . . . . . . . .  PUBLIC   DATA   U_CHAR   000EH  1
+num_residue. . . . . . . . . . . . . .  PUBLIC   DATA   U_CHAR   000FH  1
+C_T2 . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00C9H  1
+WR . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B6H  1
+Key. . . . . . . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
+RCLK . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00CDH  1
+TCLK . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00CCH  1
+P00. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0080H  1
+SBUF . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0099H  1
+PCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0087H  1
+P10. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0090H  1
+P01. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0081H  1
+P20. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00A0H  1
+P11. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0091H  1
+P02. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0082H  1
+ISP_ADDRH. . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E3H  1
+P30. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B0H  1
+P21. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00A1H  1
+C51 COMPILER V9.54   MAIN                                                                  02/21/2022 13:33:20 PAGE 10  
+
+NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
+====                                    =====   ======  ====    ======  ====
+
+
+P12. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0092H  1
+P03. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0083H  1
+UART_Init. . . . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
+SCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0098H  1
+P31. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B1H  1
+P22. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00A2H  1
+P13. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0093H  1
+P04. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0084H  1
+P40. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00E8H  1
+TMOD . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0089H  1
+TCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0088H  1
+P32. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B2H  1
+P23. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00A3H  1
+P14. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0094H  1
+P05. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0085H  1
+P41. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00E9H  1
+P33. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B3H  1
+P24. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00A4H  1
+P15. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0095H  1
+P06. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0086H  1
+ISP_ADDRL. . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E4H  1
+P42. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00EAH  1
+P34. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B4H  1
+P25. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00A5H  1
+P16. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0096H  1
+P07. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0087H  1
+P43. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00EBH  1
+P35. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B5H  1
+P26. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00A6H  1
+P17. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0097H  1
+P44. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00ECH  1
+P36. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B6H  1
+P27. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00A7H  1
+P45. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00EDH  1
+P37. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B7H  1
+P46. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00EEH  1
+PWM_up . . . . . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
+IE0. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0089H  1
+IE1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      008BH  1
+_UART_SendByte . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
+AUXR . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   008EH  1
+B. . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00F0H  1
+CP_RL2 . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00C8H  1
+ACC. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E0H  1
+ET0. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00A9H  1
+ET1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00ABH  1
+TF0. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      008DH  1
+Timer0Init . . . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
+ET2. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00ADH  1
+TF1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      008FH  1
+TF2. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00CFH  1
+RB8. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      009AH  1
+TH0. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   008CH  1
+EX0. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00A8H  1
+IT0. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0088H  1
+TH1. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   008DH  1
+TB8. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      009BH  1
+C51 COMPILER V9.54   MAIN                                                                  02/21/2022 13:33:20 PAGE 11  
+
+NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
+====                                    =====   ======  ====    ======  ====
+
+
+EX1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00AAH  1
+IT1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      008AH  1
+TH2. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00CDH  1
+P. . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00D0H  1
+SM0. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      009FH  1
+TL0. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   008AH  1
+num. . . . . . . . . . . . . . . . . .  PUBLIC   DATA   U_CHAR   0010H  1
+SM1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      009EH  1
+TL1. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   008BH  1
+SM2. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      009DH  1
+TL2. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00CCH  1
+PT0. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B9H  1
+LED. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0091H  1
+PT1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00BBH  1
+RS0. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00D3H  1
+ISP_CONTR. . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E7H  1
+PT2. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00BDH  1
+TR0. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      008CH  1
+RS1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00D4H  1
+TR1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      008EH  1
+TR2. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00CAH  1
+PX0. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B8H  1
+WDT_CONTR. . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E1H  1
+PX1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00BAH  1
+key_1. . . . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+DPH. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0083H  1
+num_count. . . . . . . . . . . . . . .  EXTERN   DATA   U_CHAR   -----  1
+a. . . . . . . . . . . . . . . . . . .  PUBLIC   DATA   U_INT    0011H  2
+DPL. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0082H  1
+IPH. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00B7H  1
+EXEN2. . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00CBH  1
+REN. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      009CH  1
+T2MOD. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C9H  1
+T2CON. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C8H  1
+ISP_DATA . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E2H  1
+SADEN. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00B9H  1
+RXD. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B0H  1
+SADDR. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00A9H  1
+TXD. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B1H  1
+_Delay . . . . . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
+AUXR1. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00A2H  1
+PWM. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0092H  1
+F0 . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00D5H  1
+F1 . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00D1H  1
+HWX. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0090H  1
+PSW. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D0H  1
+key1 . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0093H  1
+key2 . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0094H  1
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    225    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     19    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+C51 COMPILER V9.54   MAIN                                                                  02/21/2022 13:33:20 PAGE 12  
+
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

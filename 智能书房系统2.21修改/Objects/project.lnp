@@ -1,0 +1,8 @@
+".\Objects\main.obj",
+".\Objects\Delay.obj",
+".\Objects\Timer0.obj",
+".\Objects\UART.obj",
+".\Objects\pwm.obj",
+".\Objects\Reset.obj" 
+TO ".\Objects\project" 
+PRINT(".\Listings\project.m51") RAMSIZE(256) 

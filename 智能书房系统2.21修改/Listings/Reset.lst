@@ -1,0 +1,74 @@
+C51 COMPILER V9.54   RESET                                                                 02/21/2022 13:41:36 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE RESET
+OBJECT MODULE PLACED IN .\Objects\Reset.obj
+COMPILER INVOKED BY: E:\kiel5\C51\BIN\C51.EXE Reset.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\Reset
+                    -.lst) TABS(2) OBJECT(.\Objects\Reset.obj)
+
+line level    source
+
+   1          #include "STC89Cxx.h"
+   2          
+   3          void reset (void)//51单片机软件复位
+   4          {
+   5   1          ((void (code *) (void)) 0x0000) ();
+   6   1      }
+   7           
+   8          
+   9          /*51单片机无自带的看门狗，没有提供软件复位的函数和机制，要想实现软件复位
+             -，只能通过强制将PC指针指到0x0000位置，
+  10          
+  11          通过以下函数将PC指针强制指到0x0000：
+  12          
+  13          void reset(void)
+  14          {undefined
+  15              ((void (code *) (void)) 0x0000) ();
+  16          }
+  17          
+  18          可以使用下面的程序跳到0000H实现软复位，下面的程序实际上是一个函数指针，�
+             -�针指向了0000H地址。
+  19          
+  20          （（void （code *） （void）） 0x0000） （）;
+  21          
+  22          下面的例子将实现软件自复位
+  23          
+  24          void reset （void）
+  25          {
+  26              （（void （code *） （void）） 0x0000） （）;
+  27          }
+  28           
+  29          void main （void）
+  30          {
+  31              reset （）;
+  32          }
+  33          你可能注意到以上的软复位程序并不能清除8051的中断系统和某些8051的外围设备�
+             -�当您在中断程序中调用上面的软件复位程序后，中断将再不能触发。因此，以上的软复位�
+             -�序不能在中断子程序中调用。
+  34          
+  35          STC的单片机有软件复位指令，即ISP_CONTR，地址在0E7H 单元(即str ISP_CONTR=0xE7)，MOVISP
+             -_CONTR,#00100000B（C语言为ISP_CONTR=0x20），内狗也是一条指令MOV WDT_CONTR,#00111100B！
+  36          STC 51系列单片机Datasheet中指出：传统的8051 单片机由于硬件上未支持此功能，用�
+             -�必须用软件模拟实现，实现起来较麻烦。现STC 新推出的增强型8051 根据客户要求增加了ISP_C
+             -ONTR 特殊功能寄存器,实现了此功能。用户只需简单的控制ISP_CONTR 特殊功能寄存器的其中两�
+             -� SWBS / SWRST 就可以系统复位了。
+  37          ————————————————
+  38          版权声明：本文为CSDN博主「EmbededCoder」的原创文章，遵循CC 4.0 BY-SA版权协议，转
+             -载请附上原文出处链接及本声明。
+  39          原文链接：https://blog.csdn.net/u012308586/article/details/100655798*/
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =      3    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+C51 COMPILER V9.54   RESET                                                                 02/21/2022 13:41:36 PAGE 2   
+
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

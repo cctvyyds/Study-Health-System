@@ -1,0 +1,279 @@
+LX51 LINKER/LOCATER V4.66.41.0                                                          02/21/2022  13:33:21  PAGE 1
+
+
+LX51 LINKER/LOCATER V4.66.41.0, INVOKED BY:
+E:\KIEL5\C51\BIN\LX51.EXE .\build\Target 1\Delay.o, .\build\Target 1\Key.o, .\build\Target 1\Reset.o, .\build\Target 1\T
+>> imer0.o, .\build\Target 1\UART.o, .\build\Target 1\main.o, .\build\Target 1\pwm.o TO .\build\Target 1\智能书房系统2.2
+>> 1修改 PRINT (.\build\Target 1\智能书房系统2.21修改.map) REMOVEUNUSED
+
+
+CPU MODE:     8051 MODE
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\build\Target 1\Delay.o (DELAY)
+         COMMENT TYPE 0: C51 V9.54
+  .\build\Target 1\Key.o (KEY)
+         COMMENT TYPE 0: C51 V9.54
+  .\build\Target 1\Reset.o (RESET)
+         COMMENT TYPE 0: C51 V9.54
+  .\build\Target 1\Timer0.o (TIMER0)
+         COMMENT TYPE 0: C51 V9.54
+  .\build\Target 1\UART.o (UART)
+         COMMENT TYPE 0: C51 V9.54
+  .\build\Target 1\main.o (MAIN)
+         COMMENT TYPE 0: C51 V9.54
+  .\build\Target 1\pwm.o (PWM)
+         COMMENT TYPE 0: C51 V9.54
+  E:\KIEL5\C51\LIB\C51S.LIB (?C_STARTUP)
+         COMMENT TYPE 1: A51 / ASM51 Assembler
+  E:\KIEL5\C51\LIB\C51S.LIB (?C_INIT)
+         COMMENT TYPE 1: A51 / ASM51 Assembler
+
+
+ACTIVE MEMORY CLASSES OF MODULE:  .\build\Target 1\智能书房系统2.21修改 (DELAY)
+
+BASE        START       END         USED      MEMORY CLASS
+==========================================================
+C:000000H   C:000000H   C:00FFFFH   00029DH   CODE
+I:000000H   I:000000H   I:00007FH   000023H   DATA
+I:000000H   I:000000H   I:0000FFH   000001H   IDATA
+
+
+MEMORY MAP OF MODULE:  .\build\Target 1\智能书房系统2.21修改 (DELAY)
+
+
+START     STOP      LENGTH    ALIGN  RELOC    MEMORY CLASS   SEGMENT NAME
+=========================================================================
+
+* * * * * * * * * * *   D A T A   M E M O R Y   * * * * * * * * * * * * *
+000000H   000007H   000008H   ---    AT..     DATA           "REG BANK 0"
+000008H   00001AH   000013H   BYTE   UNIT     DATA           ?DT?MAIN
+00001BH   000021H   000007H   BYTE   UNIT     DATA           ?DT?PWM
+000022H   000022H   000001H   BYTE   UNIT     DATA           _DATA_GROUP_
+000023H   000023H   000001H   BYTE   UNIT     IDATA          ?STACK
+
+* * * * * * * * * * *   C O D E   M E M O R Y   * * * * * * * * * * * * *
+000000H   000002H   000003H   ---    OFFS..   CODE           ?CO??C_STARTUP?0
+000003H   00000AH   000008H   BYTE   UNIT     CODE           ?PR?_UART_SENDBYTE?UART
+00000BH   00000DH   000003H   BYTE   OFFS..   CODE           ?PWM?0000B
+00000EH   000020H   000013H   BYTE   UNIT     CODE           ?PR?KEY_1?MAIN
+000021H   000022H   000002H   ---    ---      **GAP**
+000023H   000025H   000003H   BYTE   OFFS..   CODE           ?MAIN?00023
+000026H   0000B2H   00008DH   BYTE   UNIT     CODE           ?PR?MAIN?MAIN
+0000B3H   00013EH   00008CH   BYTE   UNIT     CODE           ?C_C51STARTUP
+00013FH   0001ABH   00006DH   BYTE   UNIT     CODE           ?PR?TIMER0_ROUTINE?PWM
+0001ACH   0001E0H   000035H   BYTE   UNIT     CODE           ?PR?HWX_2?MAIN
+0001E1H   000213H   000033H   BYTE   UNIT     CODE           ?PR?KEY?KEY
+000214H   00023CH   000029H   BYTE   UNIT     CODE           ?C_INITSEG
+LX51 LINKER/LOCATER V4.66.41.0                                                        02/21/2022  13:33:21  PAGE 2
+
+
+00023DH   000257H   00001BH   BYTE   UNIT     CODE           ?PR?UART_INIT?UART
+000258H   00026EH   000017H   BYTE   UNIT     CODE           ?PR?TIMER0INIT?TIMER0
+00026FH   000284H   000016H   BYTE   UNIT     CODE           ?PR?_DELAY?DELAY
+000285H   00028DH   000009H   BYTE   UNIT     CODE           ?PR?UART_ROUTINE?MAIN
+00028EH   000294H   000007H   BYTE   UNIT     CODE           ?PR?PWM_UP?PWM
+000295H   00029BH   000007H   BYTE   UNIT     CODE           ?PR?PWM_OFF?PWM
+00029CH   00029EH   000003H   BYTE   UNIT     CODE           ?PR?RESET?RESET
+
+
+
+OVERLAY MAP OF MODULE:   .\build\Target 1\智能书房系统2.21修改 (DELAY)
+
+
+FUNCTION/MODULE              BIT_GROUP   DATA_GROUP 
+--> CALLED FUNCTION/MODULE  START  STOP  START  STOP
+====================================================
+UART_ROUTINE/MAIN           ----- -----  ----- -----
+
+*** NEW ROOT **************
+
+TIMER0_ROUTINE/PWM          ----- -----  ----- -----
+
+*** NEW ROOT **************
+
+?C_C51STARTUP               ----- -----  ----- -----
+  +--> MAIN/MAIN
+  +--> ?C_INITSEG
+
+MAIN/MAIN                   ----- -----  ----- -----
+  +--> TIMER0INIT/TIMER0
+  +--> PWM_UP/PWM
+  +--> HWX_2/MAIN
+  +--> KEY_1/MAIN
+  +--> KEY/KEY
+  +--> PWM_OFF/PWM
+  +--> UART_INIT/UART
+  +--> _UART_SENDBYTE/UART
+  +--> RESET/RESET
+
+TIMER0INIT/TIMER0           ----- -----  ----- -----
+
+PWM_UP/PWM                  ----- -----  ----- -----
+
+HWX_2/MAIN                  ----- -----  ----- -----
+  +--> _DELAY/DELAY
+
+_DELAY/DELAY                ----- -----  ----- -----
+
+KEY_1/MAIN                  ----- -----  ----- -----
+  +--> KEY/KEY
+
+KEY/KEY                     ----- -----  0022H 0022H
+  +--> _DELAY/DELAY
+
+PWM_OFF/PWM                 ----- -----  ----- -----
+
+UART_INIT/UART              ----- -----  ----- -----
+
+_UART_SENDBYTE/UART         ----- -----  ----- -----
+
+RESET/RESET                 ----- -----  ----- -----
+
+?C_INITSEG                  ----- -----  ----- -----
+
+
+LX51 LINKER/LOCATER V4.66.41.0                                                        02/21/2022  13:33:21  PAGE 3
+
+
+
+PUBLIC SYMBOLS OF MODULE:  .\build\Target 1\智能书房系统2.21修改 (DELAY)
+
+
+      VALUE       CLASS    TYPE      PUBLIC SYMBOL NAME
+      =================================================
+      00000000H   NUMBER   ---       ?C?CODESEG
+      00000000H   NUMBER   ---       ?C?XDATASEG
+      010000FAH   CODE     ---       ?C_START
+      01000000H   CODE     ---       ?C_STARTUP
+      0100026FH   CODE     ---       _Delay
+      01000003H   CODE     ---       _UART_SendByte
+      00000019H   DATA     WORD      a
+      010001ACH   CODE     ---       HWX_2
+      0000001FH   DATA     WORD      jiaodu
+      010001E1H   CODE     ---       Key
+      0100000EH   CODE     ---       key_1
+      01000026H   CODE     ---       main
+      00000018H   DATA     BYTE      num
+      00000021H   DATA     BYTE      num_count
+      00000017H   DATA     BYTE      num_residue
+      01000295H   CODE     ---       PWM_off
+      0100028EH   CODE     ---       PWM_up
+      0100029CH   CODE     ---       reset
+      00000016H   DATA     BYTE      SBUF_review
+      0000000CH   DATA     ---       shuma
+      0100013FH   CODE     ---       Timer0_Routine
+      01000258H   CODE     ---       Timer0Init
+      0100023DH   CODE     ---       UART_Init
+      01000285H   CODE     ---       UART_Routine
+
+
+
+SYMBOL TABLE OF MODULE:  .\build\Target 1\智能书房系统2.21修改 (DELAY)
+
+      VALUE       REP       CLASS    TYPE      SYMBOL NAME
+      ====================================================
+      ---         MODULE    ---      ---       DELAY
+      0100026FH   PUBLIC    CODE     ---       _Delay
+
+      0100026FH   BLOCK     CODE     ---       LVL=0
+      0100026FH   BLOCK     CODE     NEAR LAB  LVL=1
+      00000005H   SYMBOL    DATA     VOID      i
+      00000004H   SYMBOL    DATA     VOID      j
+      ---         BLOCKEND  ---      ---       LVL=1
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      ---         MODULE    ---      ---       KEY
+      010001E1H   PUBLIC    CODE     ---       Key
+
+      010001E1H   BLOCK     CODE     ---       LVL=0
+      010001E1H   BLOCK     CODE     NEAR LAB  LVL=1
+      00000022H   SYMBOL    DATA     VOID      KeyNumber
+      ---         BLOCKEND  ---      ---       LVL=1
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      ---         MODULE    ---      ---       RESET
+      0100029CH   PUBLIC    CODE     ---       reset
+
+      0100029CH   BLOCK     CODE     ---       LVL=0
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      ---         MODULE    ---      ---       TIMER0
+      01000258H   PUBLIC    CODE     ---       Timer0Init
+
+LX51 LINKER/LOCATER V4.66.41.0                                                        02/21/2022  13:33:21  PAGE 4
+
+
+      01000258H   BLOCK     CODE     ---       LVL=0
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      ---         MODULE    ---      ---       UART
+      01000003H   PUBLIC    CODE     ---       _UART_SendByte
+      0100023DH   PUBLIC    CODE     ---       UART_Init
+
+      0100023DH   BLOCK     CODE     ---       LVL=0
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      01000003H   BLOCK     CODE     ---       LVL=0
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      ---         MODULE    ---      ---       MAIN
+      00000019H   PUBLIC    DATA     WORD      a
+      00000018H   PUBLIC    DATA     BYTE      num
+      00000017H   PUBLIC    DATA     BYTE      num_residue
+      00000016H   PUBLIC    DATA     BYTE      SBUF_review
+      0000000CH   PUBLIC    DATA     ---       shuma
+      01000285H   PUBLIC    CODE     ---       UART_Routine
+      01000026H   PUBLIC    CODE     ---       main
+      0100000EH   PUBLIC    CODE     ---       key_1
+      010001ACH   PUBLIC    CODE     ---       HWX_2
+
+      010001ACH   BLOCK     CODE     ---       LVL=0
+      010001ACH   BLOCK     CODE     NEAR LAB  LVL=1
+      00000008H   SYMBOL    DATA     VOID      flag
+      0000000AH   SYMBOL    DATA     VOID      lastflag
+      ---         BLOCKEND  ---      ---       LVL=1
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      0100000EH   BLOCK     CODE     ---       LVL=0
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      01000026H   BLOCK     CODE     ---       LVL=0
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      01000285H   BLOCK     CODE     ---       LVL=0
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      ---         MODULE    ---      ---       PWM
+      00000021H   PUBLIC    DATA     BYTE      num_count
+      0000001FH   PUBLIC    DATA     WORD      jiaodu
+      0100013FH   PUBLIC    CODE     ---       Timer0_Routine
+      01000295H   PUBLIC    CODE     ---       PWM_off
+      0100028EH   PUBLIC    CODE     ---       PWM_up
+
+      0100028EH   BLOCK     CODE     ---       LVL=0
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      01000295H   BLOCK     CODE     ---       LVL=0
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      0100013FH   BLOCK     CODE     ---       LVL=0
+      01000143H   BLOCK     CODE     NEAR LAB  LVL=1
+      0000001BH   SYMBOL    DATA     VOID      T0Count
+      0000001DH   SYMBOL    DATA     VOID      T0Count_1
+      ---         BLOCKEND  ---      ---       LVL=1
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      ---         MODULE    ---      ---       ?C_STARTUP
+      01000000H   PUBLIC    CODE     ---       ?C_STARTUP
+
+      ---         MODULE    ---      ---       ?C_INIT
+      010000FAH   PUBLIC    CODE     ---       ?C_START
+LX51 LINKER/LOCATER V4.66.41.0                                                        02/21/2022  13:33:21  PAGE 5
+
+
+
+Program Size: data=36.0 xdata=0 const=0 code=669
+LX51 RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
